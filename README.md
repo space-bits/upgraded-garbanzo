@@ -19,7 +19,7 @@ Uname:password, root:The cost of living1
 
 
 ### APIs
-[Pedestrian data]{https://data.melbourne.vic.gov.au/resource/cb85-mn2u.json}
+[Pedestrian data (hourly)]{https://data.melbourne.vic.gov.au/resource/cb85-mn2u.json}
 [Helping Out]{https://data.melbourne.vic.gov.au/resource/nbdz-yp2p.json}
 [Affordable Food]{https://data.melbourne.vic.gov.au/resource/uwyu-5y9e.json}
 [Bike Share Station Data]{https://data.melbourne.vic.gov.au/resource/uwyu-5y9e.json}
