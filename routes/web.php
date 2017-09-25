@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('station', function() {
+    return view('bikedata');
+});
+
+Route::get('station/{[id]}', 'BikeStationController@show');
