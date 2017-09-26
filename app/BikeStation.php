@@ -29,7 +29,7 @@ class BikeStation extends Model
     protected $uploaddate;
 
     public function render() {
-        if($code == 200){} else {},,,s
+        if($code == 200){} else {}
         $data = json_encode(array(
             'id'= $this->id,
             'latitude'= $this->latitude,
