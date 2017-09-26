@@ -29,8 +29,8 @@ class BikeStation extends Model
     protected $uploaddate;
 
     public function render() {
-        if($code == 200){} else {}
-        $data = json_encode(array(
+        // if($code == 200){} else {}
+        $data = json_encode(array[
             'id'= $this->id,
             'latitude'= $this->latitude,
             'longtitude'= $this->longtitude,
@@ -39,7 +39,6 @@ class BikeStation extends Model
             'nbemptydoc'= $this->nbemptydoc,
             'terminalname'= $this->,
             'uploaddate'= $this->uploaddate,
-        ))
-
+        ])
     }
 }
