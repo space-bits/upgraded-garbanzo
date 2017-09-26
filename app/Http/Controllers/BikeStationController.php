@@ -36,7 +36,7 @@ class BikeStationController extends Controller
      */
     public function store(Request $request)
     {
-        
+
     }
 
     /**
@@ -47,11 +47,13 @@ class BikeStationController extends Controller
      */
     public function show(BikeStation $bike_station)
     {
+        //Move to the bike station model
         $station = DB::select('select * from bike_station where id = ?', $bike_station);
 
         foreach ($station as $key => $value) {
             echo '<p>'.$key.'</p>'.'<p> : '.$value.'</p>';
         }
+        return view("index", compact('key'));
     }
 
     // /**
