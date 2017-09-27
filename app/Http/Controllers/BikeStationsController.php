@@ -47,12 +47,9 @@ class BikeStationsController extends Controller
      * @param  \App\BikeStation  $bikeStation
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(BikeStation $bikeStation)
     {
-        $bikeStation = BikeStation::find($id);
-
         return view('bikeStations.show', compact('bikeStation'));
-
     }
 
     /**
