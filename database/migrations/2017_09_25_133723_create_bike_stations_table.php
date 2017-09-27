@@ -21,7 +21,7 @@ class CreateBikeStationsTable extends Migration
             $table->integer('nbbikes');
             $table->integer('nbemptydoc');
             $table->string('terminalname');
-            $table->date('uploaddate');
+            $table->timestamp('uploaddate');
             $table->timestamp('created_at');
         });
     }

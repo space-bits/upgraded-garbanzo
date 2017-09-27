@@ -12,17 +12,19 @@
 */
 
 Route::get('/', function () {
-
-    $dbQuery = ;
-    $stations = [
-        
-    ];
-
-    return view('landingPage', compact('names'));
+    return view('landingPage');
 });
 
-Route::get('station', function() {
-    return view('bikedata');
+Route::get('/stations', function() {
+
+    $stations = DB::table('bike_stations')->get();
+
+    return view('stations.index', compact('stations'));
 });
 
-// Route::get('station/{[id]}', 'BikeStationController@show');
+Route::get('/stations/{station}', function($id) {
+
+    $station = DB::table('bike_stations')->find($id);
+
+    return view('stations.show', compact('station'));
+});

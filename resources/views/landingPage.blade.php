@@ -1,4 +1,4 @@
-@extends('master')
+@extends('pageflow.master')
 
 @section('content')
 <div class="flex-center position-ref full-height">
@@ -17,12 +17,6 @@
         <div class="title m-b-md">
             Welcome to Melbourne's Open Data!
         </div>
-        <div>
-        @foreach ($stations as $station)
-            <li> {{ $station }} </li>
-        @endforeach
-        </div>
-        <!-- BikeStation::render(); -->
         <aside class="links">
             <a href="https://github.space-bits.io/upgraded-garbanzo">Documentation</a>
             <a href="https://github.com/space-bits/upgraded-garbanzo">GitHub</a>
