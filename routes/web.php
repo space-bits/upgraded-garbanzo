@@ -7,7 +7,7 @@ Route::get('/', function () {
 });
 
 Route::get('/bikeStations', function() {
-
+    // Defined in BikeStation model
     $bikeStations = BikeStation::all();
 
     return view('bikeStations.index', compact('bikeStations'));
