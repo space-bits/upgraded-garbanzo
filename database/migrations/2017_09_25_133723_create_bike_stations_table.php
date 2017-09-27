@@ -13,7 +13,7 @@ class CreateBikeStationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bikeStations', function (Blueprint $table) {
+        Schema::create('bike_stations', function (Blueprint $table) {
             $table->increments('id');
             $table->float('latitude');
             $table->float('longtitude');
@@ -33,6 +33,6 @@ class CreateBikeStationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bikeStations');
+        Schema::dropIfExists('bike_stations');
     }
 }
