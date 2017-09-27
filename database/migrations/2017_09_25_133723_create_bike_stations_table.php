@@ -15,14 +15,14 @@ class CreateBikeStationsTable extends Migration
     {
         Schema::create('bike_stations', function (Blueprint $table) {
             $table->increments('id');
-            // $table->float('latitude');
-            // $table->float('longtitude');
-            // $table->string('featurename');
-            // $table->integer('nbbikes');
-            // $table->integer('nbemptydoc');
+            $table->float('latitude');
+            $table->float('longtitude');
+            $table->string('featurename');
+            $table->integer('nbbikes');
+            $table->integer('nbemptydoc');
             $table->string('terminalname');
-            // $table->timestamp('uploaddate');
-            // $table->timestamps();
+            $table->datetime('uploaddate');
+            $table->timestamps();
         });
     }
 

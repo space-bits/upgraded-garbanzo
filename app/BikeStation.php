@@ -6,14 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class BikeStation extends Model
 {
-    public function bikeCount()
+    public function bikeCount($query)
     {
-
+        return $query;//->count('nbbikes');
     }
 
-    public function hasBikes()
+    public function scopeEmpty($query)
     {
-        $this->bikeCount() > 0 ? true : false;
+        return $query->where('nbbikes', 0);
+    }
+
+    public function scopeNotEmpty($query)
+    {
+        return $query->where('nbbikes', '>', 0);
     }
 
     // public function
