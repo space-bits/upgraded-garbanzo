@@ -15,25 +15,14 @@ Once these two things have been completed, you can ssh into the server, either b
 [Read more here][@todo link to aws instruction on how to add new user]
 
 ### Sql Config
-Root Password: The cost of living1
+Uname:password, root:The cost of living1
 
-Things you may want to cover:
 
-* Ruby version
+### APIs
+[Pedestrian data (hourly)]{https://data.melbourne.vic.gov.au/resource/cb85-mn2u.json}
+[Helping Out]{https://data.melbourne.vic.gov.au/resource/nbdz-yp2p.json}
+[Affordable Food]{https://data.melbourne.vic.gov.au/resource/uwyu-5y9e.json}
+[Bike Share Station Data]{https://data.melbourne.vic.gov.au/resource/uwyu-5y9e.json}
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
