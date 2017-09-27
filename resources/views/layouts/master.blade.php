@@ -26,7 +26,7 @@
     @include('layouts.nav')
 
     <div class="container">
-        @include('content')
+        @yield('content')
     </div>
 
     <div class="footer">
