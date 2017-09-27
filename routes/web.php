@@ -15,16 +15,19 @@ Route::get('/', function () {
     return view('landingPage');
 });
 
-Route::get('/stations', function() {
+Route::get('/bikeStations', function() {
 
-    $stations = DB::table('bike_stations')->get();
+    $bikeStations = DB::table('bikeStations')->get();
 
-    return view('stations.index', compact('stations'));
+    return view('bikeStations.index', compact('bikeStations'));
 });
 
-Route::get('/stations/{station}', function($id) {
+Route::get('/bikeStations/{bikeStation}', function($id) {
 
-    $station = DB::table('bike_stations')->find($id);
-
-    return view('stations.show', compact('station'));
+    $bikeStation = DB::table('bikeStations')->find($id);
+    if($bikeStation != null){
+        return view('bikeStations.show', compact('bikeStation'));
+    } else {
+        // Some error page resource not found or something
+    }
 });

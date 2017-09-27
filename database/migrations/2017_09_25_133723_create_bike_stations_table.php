@@ -13,7 +13,7 @@ class CreateBikeStationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bike_stations', function (Blueprint $table) {
+        Schema::create('bikeStations', function (Blueprint $table) {
             $table->increments('id');
             $table->float('latitude');
             $table->float('longtitude');
@@ -22,7 +22,7 @@ class CreateBikeStationsTable extends Migration
             $table->integer('nbemptydoc');
             $table->string('terminalname');
             $table->timestamp('uploaddate');
-            $table->timestamp('created_at');
+            $table->timestamps();
         });
     }
 
@@ -33,6 +33,6 @@ class CreateBikeStationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bike_stations');
+        Schema::dropIfExists('bikeStations');
     }
 }
