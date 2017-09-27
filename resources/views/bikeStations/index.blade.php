@@ -7,7 +7,7 @@
     @foreach ($bikeStations as $bikeStation)
         <li>
             <a href="/bikeStations/{{ $bikeStation->id }}">
-                {{ $bikeStation->featurename }}
+                {{ $bikeStation->terminalname }}
             </a>
         </li>
      @endforeach
