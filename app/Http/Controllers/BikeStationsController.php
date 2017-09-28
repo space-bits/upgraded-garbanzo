@@ -98,18 +98,17 @@ class BikeStationsController extends Controller
         if($curl_response == false){
             $info = curl_getinfo($curl);
             curl_close($curl);
-            die('Error occured during curl exec. Additional info: ' . var_export($info));
+            die('Error occured during curl exec.
+                Additional info: ' . var_export($info));
         }
         curl_close($curl);
-        $decoded = json_decode($curl_response);
-        if(isset($decoded->response->status) && $decoded->response->status == 'ERROR' ) {
-            // Add error handling
-            die('Error occured: ' . $decoded->response->errormessage);
-        }
-        echo 'response ok!';
-        // $passback = $decoded->response;
-        var_export($decoded->response);
+        $decode = json_decode($curl_response);
 
-        return view('bikeStations.api', );
+        // if(isset($decode->response->status)
+        //     && $decode->response->status == 'ERROR' ) {
+        //         die('Error occured: ' . $decode->response->errormessage);
+        // }
+
+        return view('bikeStations.api')->with('stations', $decode);
     }
 }

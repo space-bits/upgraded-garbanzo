@@ -1,13 +1,10 @@
-@extends('master')
+@extends('layouts.master')
 
 @section('content')
-
-<ul>
-@foreach ($key as $value)
-    <li>
-        
-    </li>
-@endforeach
-</ul>
-
+<hr>
+    <ul>
+    <em>Stations :</em>
+        {{ $stations }}
+    </ul>
+<hr>
 @endsection
