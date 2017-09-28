@@ -20,13 +20,9 @@
 
 </head>
 <body>
-    @yield('layouts.nav')
     <div class="container">
         @yield('content')
-    </div>
-
-    <div class="footer">
-        @yield('layouts.footer')
+        @yield('home')
     </div>
 </body>
 </html>

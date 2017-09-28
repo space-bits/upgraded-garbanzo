@@ -2,9 +2,7 @@
 
 use App\BikeStation;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
 
 // Route::get('/', 'BikeStationsController@index');
 Route::get('/bikeStations', 'BikeStationsController@index');

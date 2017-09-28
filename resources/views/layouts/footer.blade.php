@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('footer')
+@section('content')
 
 <aside class="links">
     <a href="https://github.space-bits.io/upgraded-garbanzo">Documentation</a>
