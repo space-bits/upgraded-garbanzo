@@ -56,6 +56,19 @@ class BikeStationsController extends Controller
     }
 
     /**
+    *   Display counts at each station
+    *
+    *   @param  \App\BikeStation  $bikeStation
+    *   @return \Illuminate\Http\Response
+    **/
+    public function counts(BikeStation $bikeStation)
+    {
+        $bikeStations = BikeStation::bikeCounts();
+
+        return view('bikeStations.counts', compact('bikeStations'));
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\BikeStation  $bikeStation

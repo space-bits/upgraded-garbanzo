@@ -4,7 +4,7 @@
 <hr>
     <ul>
     <em>Stations :</em>
-        {{ $stations }}
+        {{ var_dump($stations) }}
     </ul>
 <hr>
 @endsection

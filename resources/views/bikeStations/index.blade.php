@@ -1,7 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-
 <div>
     <ul>
     @foreach ($bikeStations as $bikeStation)

@@ -1,6 +1,3 @@
-@extends('layouts.master')
-
-@section('content')
 @if (Route::has('login'))
     <navbar class="top-right links">
         @auth
@@ -15,5 +12,3 @@
         a;lsdjjlasd
     </navbar>
 @endif
-
-@endsection

@@ -6,9 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class BikeStation extends Model
 {
-    public function bikeCount($query)
+    public static bikeCounts()
     {
-        return $query;//->count('nbbikes');
+        return static::selectRaw(id, featurename, nbbikes)
+        ->get()
+        ->toArray();
     }
 
     public function scopeEmpty($query)

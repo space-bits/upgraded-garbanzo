@@ -30,7 +30,7 @@ class CreatePedestriansTable extends Migration
             $table->time('time');
             $table->string('day');
             $table->string('sensor_name');
-
+            
             $table->primary('sensor_id');
         });
     }
