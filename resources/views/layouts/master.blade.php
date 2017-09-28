@@ -20,9 +20,11 @@
 </head>
 <body>
     @include('layouts.nav')
-    <div class="container">
+
+    <div class="content container">
         @yield('content')
     </div>
+
     @include('layouts.sidebar')
     @include('layouts.footer')
 </body>

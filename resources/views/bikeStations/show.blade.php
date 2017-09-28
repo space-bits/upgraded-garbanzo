@@ -7,4 +7,4 @@
             <li>ID, Name: {{ $bikeStation->id }}, {{ $bikeStation->terminalname }} </li>
         </ul>
     </div>
-@endsection
+@stop

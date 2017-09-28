@@ -41,7 +41,7 @@ class BikeStationsController extends Controller
      */
     public function store(Request $request)
     {
-    //    DB::insert();
+        DB::insert();
     }
 
     /**
@@ -104,24 +104,29 @@ class BikeStationsController extends Controller
 
     public function getOpenBikeData()
     {
-        $service_url = 'https://data.melbourne.vic.gov.au/resource/qnjw-wgaj.json';
-        $curl = curl_init($service_url);
+        // $service_url = 'https://data.melbourne.vic.gov.au/resource/qnjw-wgaj.json';
 
-        $curl_response = curl_exec($curl);
-        if($curl_response == false){
-            $info = curl_getinfo($curl);
-            curl_close($curl);
-            die('Error occured during curl exec.
-                Additional info: ' . var_export($info));
-        }
-        curl_close($curl);
-        $decode = json_decode($curl_response);
+        $url = 'https://data.melbourne.vic.gov.au/resource/qnjw-wgaj.json';
 
-        // if(isset($decode->response->status)
-        //     && $decode->response->status == 'ERROR' ) {
-        //         die('Error occured: ' . $decode->response->errormessage);
-        // }
+        $options = array(
+            CURLOPT_RETURNTRANSFER => true,   // return web page
+            CURLOPT_HEADER         => false,  // don't return headers
+            CURLOPT_FOLLOWLOCATION => true,   // follow redirects
+            CURLOPT_MAXREDIRS      => 10,     // stop after 10 redirects
+            CURLOPT_ENCODING       => "",     // handle compressed
+            CURLOPT_USERAGENT      => "test", // name of client
+            CURLOPT_AUTOREFERER    => true,   // set referrer on redirect
+            CURLOPT_CONNECTTIMEOUT => 120,    // time-out on connect
+            CURLOPT_TIMEOUT        => 120,    // time-out on response
+        );
 
-        return view('bikeStations.api')->with('stations', $decode);
+        $ch = curl_init($url);
+        curl_setopt_array($ch, $options);
+
+        $content  = curl_exec($ch);
+
+        curl_close($ch);
+
+        return view('bikeStations.api')->with('stations', $content);
     }
 }

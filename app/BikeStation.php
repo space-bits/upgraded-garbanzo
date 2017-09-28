@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class BikeStation extends Model
 {
-    public static bikeCounts()
+    public static function bikeCounts()
     {
         return static::selectRaw(id, featurename, nbbikes)
         ->get()
