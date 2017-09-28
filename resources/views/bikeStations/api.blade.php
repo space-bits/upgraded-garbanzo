@@ -4,7 +4,8 @@
 <hr>
     <ul>
     <em>Stations :</em>
-        {{ $stations }}
+    <!-- Error as this is not accessing the array correctly -->
+    <?php print_r($bikeStations); ?>
     </ul>
 <hr>
 @stop

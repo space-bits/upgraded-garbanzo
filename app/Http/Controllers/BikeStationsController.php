@@ -102,9 +102,14 @@ class BikeStationsController extends Controller
 
     }
 
+    /**
+    *   Get the open data for bike stations
+    *
+    * @return \Illuminate\Http\Response
+    **/
     public function getOpenBikeData()
     {
-        // $service_url = 'https://data.melbourne.vic.gov.au/resource/qnjw-wgaj.json';
+        //https://stackoverflow.com/questions/6516902/how-to-get-response-using-curl-in-php#6518125
 
         $url = 'https://data.melbourne.vic.gov.au/resource/qnjw-wgaj.json';
 
@@ -123,10 +128,39 @@ class BikeStationsController extends Controller
         $ch = curl_init($url);
         curl_setopt_array($ch, $options);
 
-        $content  = curl_exec($ch);
+        $response_json = json_decode(curl_exec($ch), true);
+        foreach ($response_json as $bikeStation) {
+            $bikeStations = [
+                'id' => $response_json->;
+            ];
+        }
+        /*
+        Array
+        (
+            [0] => Array
+            (
+                [coordinates] => Array
+                (
+                    [type] => Point
+                    [coordinates] => Array
+                    (
+                        [0] => 144.967814
+                        [1] => -37.817523
+                    )
+                )
+                [featurename] => Federation Square - Flinders St / Swanston St - City
+                [id] => 4
+                [nbbikes] => 14
+                [nbemptydoc] => 11
+                [terminalname] => 60001
+                [uploaddate] => 2017-09-29T11:15:06.000
+            )
+            ...
+        )
+        */
 
         curl_close($ch);
 
-        return view('bikeStations.api')->with('stations', $content);
+        return view('bikeStations.api', compact('bikeStations'));
     }
 }

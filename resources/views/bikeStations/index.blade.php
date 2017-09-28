@@ -9,7 +9,7 @@
             {{ $bikeStation->terminalname }}
         </a>
     </li>
- @endforeach
+@endforeach
 </ul>
 
 @stop
