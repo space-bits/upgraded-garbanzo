@@ -14,7 +14,7 @@ class CreateBikeStationsTable extends Migration
     public function up()
     {
         Schema::create('bike_stations', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('id');
             $table->float('latitude');
             $table->float('longtitude');
             $table->string('featurename');
@@ -23,6 +23,8 @@ class CreateBikeStationsTable extends Migration
             $table->string('terminalname');
             $table->datetime('uploaddate');
             $table->timestamps();
+
+            $table->primary('id');
         });
     }
 

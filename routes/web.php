@@ -2,9 +2,8 @@
 
 use App\BikeStation;
 
-Route::get('/', function () {
-    return view('landingPage');
-});
+Route::get('/', 'HomeController@index');
 
-Route::get('/bikeStations', 'BikeStationsController@index');
-Route::get('/bikeStations/{id}', 'BikeStationsController@show');
+Route::get('/bikestations', 'BikeStationsController@index');
+Route::get('/bikestations/{id}', 'BikeStationsController@show');
+Route::get('/bike/api', 'BikeStationsController@getOpenBikeData');

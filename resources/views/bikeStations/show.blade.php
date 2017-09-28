@@ -1,4 +1,4 @@
-@extends('pageflow.master')
+@extends('layouts.master')
 
 @section('content')
 <p>Data for bikeStation {{ $bikeStation->id }}: </p>
