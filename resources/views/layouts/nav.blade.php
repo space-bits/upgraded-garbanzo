@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('nav')
+@section('layouts.nav')
 @if (Route::has('login'))
     <navbar class="top-right links">
         @auth
