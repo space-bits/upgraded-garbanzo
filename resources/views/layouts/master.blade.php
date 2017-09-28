@@ -22,7 +22,6 @@
 <body>
     <div class="container">
         @yield('content')
-        @yield('home')
     </div>
 </body>
 </html>
