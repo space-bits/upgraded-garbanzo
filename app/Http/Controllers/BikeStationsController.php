@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class BikeStationsController extends Controller
 {
+    protected $base_url = 'https://data.melbourne.vic.gov.au/resource/';
+    protected $bike_url = 'qnjw-wgaj.json';
+
     /**
      * Display a listing of the resource.
      *
@@ -38,7 +41,7 @@ class BikeStationsController extends Controller
      */
     public function store(Request $request)
     {
-    //    BB::insert();
+    //    DB::insert();
     }
 
     /**
@@ -84,5 +87,29 @@ class BikeStationsController extends Controller
     public function destroy(BikeStation $bikeStation)
     {
 
+    }
+
+    public function getOpenBikeData()
+    {
+        $service_url = 'https://data.melbourne.vic.gov.au/resource/qnjw-wgaj.json';
+        $curl = curl_init($service_url);
+
+        $curl_response = curl_exec($curl);
+        if($curl_response == false){
+            $info = curl_getinfo($curl);
+            curl_close($curl);
+            die('Error occured during curl exec. Additional info: ' . var_export($info));
+        }
+        curl_close($curl);
+        $decoded = json_decode($curl_response);
+        if(isset($decoded->response->status) && $decoded->response->status == 'ERROR' ) {
+            // Add error handling
+            die('Error occured: ' . $decoded->response->errormessage);
+        }
+        echo 'response ok!';
+        // $passback = $decoded->response;
+        var_export($decoded->response);
+
+        return view('bikeStations.api', );
     }
 }
