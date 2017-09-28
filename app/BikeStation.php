@@ -20,6 +20,4 @@ class BikeStation extends Model
     {
         return $query->where('nbbikes', '>', 0);
     }
-
-    // public function
 }

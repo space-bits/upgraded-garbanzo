@@ -6,15 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Laravel</title>
-    <link href="../public/css/app.css" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap -->
+
+    <!-- Custom Stylesheet -->
+    <link href="/css/app.css" rel="stylesheet">
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
+
     <!-- Scripts -->
-    <!-- <script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script></script> -->
 
 </head>
 <body>
-@yield('content')
+    @yield('layouts.nav')
+    <div class="container">
+        @yield('content')
+    </div>
+
+    <div class="footer">
+        @yield('layouts.footer')
+    </div>
 </body>
 </html>

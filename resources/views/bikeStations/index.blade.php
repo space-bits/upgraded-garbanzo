@@ -1,4 +1,4 @@
-@extends('pageflow.master')
+@extends('layouts.master')
 
 @section('content')
 
@@ -14,4 +14,4 @@
     </ul>
 </div>
 
-@stop
+@endsection
