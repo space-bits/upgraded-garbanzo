@@ -1,17 +1,15 @@
-@extends('pageflow.master')
+@extends('layouts.master')
 
 @section('content')
 
-<div>
-    <ul>
-    @foreach ($bikeStations as $bikeStation)
-        <li>
-            <a href="/bikeStations/{{ $bikeStation->id }}">
-                {{ $bikeStation->terminalname }}
-            </a>
-        </li>
-     @endforeach
-    </ul>
-</div>
+<ul>
+@foreach ($bikeStations as $bikeStation)
+    <li>
+        <a href="/bikeStations/{{ $bikeStation->id }}">
+            {{ $bikeStation->terminalname }}
+        </a>
+    </li>
+@endforeach
+</ul>
 
 @stop

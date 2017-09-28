@@ -1,12 +1,17 @@
 <?php
 
 use Faker\Generator as Faker;
+use App\BikeStation;
 
 $factory->define(App\BikeStation::class, function (Faker $faker) {
     return [
-        [
-            {"coordinates":
-                {"type":"Point","coordinates":[144.939521,-37.814022]},"featurename":"Harbour Town - Docklands Dve - Docklands","id":"2","nbbikes":"12","nbemptydoc":"8","terminalname":"60000","uploaddate":"2017-09-24T00:52:49.000"
-
+            'longtitude'=>$faker->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = 255),
+            'latitude'=>$faker->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = 255),
+            'featurename'=>$faker->sentence,
+            'id'=>$faker->numberBetween($min = 0, $max = 1000),
+            'nbbikes'=>$faker->numberBetween($min = 0, $max = 1000),
+            'nbemptydoc'=>$faker->numberBetween($min = 0, $max = 1000),
+            'terminalname'=>$faker->numberBetween($min = 0, $max = 1000),
+            'uploaddate'=>$faker->dateTime($max = 'now')
     ];
 });
