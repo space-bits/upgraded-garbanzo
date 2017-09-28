@@ -129,11 +129,16 @@ class BikeStationsController extends Controller
         curl_setopt_array($ch, $options);
 
         $response_json = json_decode(curl_exec($ch), true);
-        foreach ($response_json as $bikeStation) {
+        //$bikeStations = $response_json[0]['featurename'];
+        foreach ($response_json[0] as $station) {
             $bikeStations = [
-                'id' => $response_json->;
+                'id' => $station->id,
+                'featurename' => $station->featurename,
+                'longtitude' => $station->coordinates->longtitude,
+                'latitude' => $station->coordinates->latitude,
             ];
         }
+
         /*
         Array
         (
