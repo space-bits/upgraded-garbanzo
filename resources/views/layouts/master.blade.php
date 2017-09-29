@@ -1,31 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="icon" href="../../favicon.ico"> -->
 
-    <title>Upgraded Garbanzo - There is no Garbanzo!</title>
+    <title>Jumbotron Template for Bootstrap</title>
 
-    <!-- Bootstrap -->
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom Stylesheet -->
-    <link href="/css/app.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="app.css" rel="stylesheet">
+  </head>
+  <body>
+      @include('layouts.nav')
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+      <div class="content container">
+          @yield('content')
+      </div>
 
-    <!-- Scripts -->
-
-</head>
-<body>
-    @include('layouts.nav')
-
-    <div class="content container">
-        @yield('content')
-    </div>
-
-    @include('layouts.sidebar')
-    @include('layouts.footer')
-</body>
-</html>
+      @include('layouts.sidebar')
+      @include('layouts.footer')
+  </body>
+  </html>
