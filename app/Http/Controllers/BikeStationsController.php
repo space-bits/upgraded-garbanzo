@@ -129,16 +129,23 @@ class BikeStationsController extends Controller
         curl_setopt_array($ch, $options);
 
         $response_json = json_decode(curl_exec($ch), true);
-        //$bikeStations = $response_json[0]['featurename'];
-        foreach ($response_json[0] as $station) {
-            $bikeStations = [
-                'id' => $station->id,
-                'featurename' => $station->featurename,
-                'longtitude' => $station->coordinates->longtitude,
-                'latitude' => $station->coordinates->latitude,
-            ];
-        }
 
+        for($i=0; $i < count($response_json); $i++){
+
+            // foreach ($response_json[0] as $station) {
+            //     if(isset($station) && !empty($station) && $station != null)
+            //     {
+                    $bikeStations[$i] = [
+                        'id' => $response_json[$i]['id'],
+                        'featurename' => $response_json[$i]['featurename'],
+                        'nbbikes' => $response_json[$i]['nbbikes'],
+                        'nbemptydoc' => $response_json[$i]['nbemptydoc'],
+                        'terminalname' => $response_json[$i]['terminalname'],
+                        'uploaddate' => $response_json[$i]['uploaddate']
+                    ];
+            //     }
+            // }
+        }
         /*
         Array
         (
@@ -153,7 +160,8 @@ class BikeStationsController extends Controller
                         [1] => -37.817523
                     )
                 )
-                [featurename] => Federation Square - Flinders St / Swanston St - City
+                [featurename] => Federation Square -
+                                Flinders St / Swanston St - City
                 [id] => 4
                 [nbbikes] => 14
                 [nbemptydoc] => 11
@@ -166,6 +174,7 @@ class BikeStationsController extends Controller
 
         curl_close($ch);
 
-        return view('bikeStations.api', compact('bikeStations'));
+        return view('bikeStations.api')
+                ->with('stations', $bikeStations);
     }
 }
