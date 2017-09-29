@@ -130,14 +130,25 @@ class BikeStationsController extends Controller
 
         $response_json = json_decode(curl_exec($ch), true);
         //$bikeStations = $response_json[0]['featurename'];
-        foreach ($response_json[0] as $station) {
-            $bikeStations = [
-                'id' => $station->id,
-                'featurename' => $station->featurename,
-                'longtitude' => $station->coordinates->longtitude,
-                'latitude' => $station->coordinates->latitude,
-            ];
-        }
+
+        // foreach ($response_json[0] as $station) {
+        //     if(isset($station) && !empty($station) && $station != null)
+        //     {
+                $bikeStations = [
+                    'id' => $response_json[0]['id'],
+                    'featurename' => $response_json[0]['featurename'],
+                    'coord' => $response_json[0]['coordinates']
+                //     'longtitude' => $station['coordinates']->longtitude,
+                //     'latitude' => $station['coordinates']->latitude,
+                //     'nbbikes' => $station->nbbikes,
+                //     'nbemptydoc' => $station->nbemptydoc,
+                //     'terminalname' => $station->terminalname,
+                //     'uploaddate' => $stations->uploaddate
+                ];
+        //     } else {
+        //         echo '<p>Error; data not correctly handled.</p>';
+        //     }
+        // }
 
         /*
         Array

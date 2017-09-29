@@ -9,6 +9,6 @@
     </navbar>
 @else
     <navbar class="top-right links">
-        a;lsdjjlasd
+        <em>Not a member? Sign up</em>
     </navbar>
 @endif
