@@ -50,8 +50,7 @@ class BikeStationsController extends Controller
      */
     public function show(BikeStation $bikeStation)
     {
-        if(DB::query('select * from bikestations where id equals $bikeStation->id')->count() != 0 )
-            return view('bikeStations.show', compact('bikeStation'));
+        return view('bikeStations.show', compact('bikeStation'));
     }
 
     /**

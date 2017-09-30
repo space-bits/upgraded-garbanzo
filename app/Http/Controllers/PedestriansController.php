@@ -15,7 +15,8 @@ class PedestriansController extends Controller
      */
     public function index()
     {
-
+        $ped = Pedestrian::all();
+        return view('pedestrian.index',compact('ped'));
     }
 
     /**
@@ -100,13 +101,14 @@ class PedestriansController extends Controller
     *
     * @return \Illuminate\Http\Response
     **/
-    public function getOpenPedData()
+    public function getOpenPedestrianData()
     {
         //https://stackoverflow.com/questions/6516902/how-to-get-response-using-curl-in-php#6518125
         $base_url = 'https://data.melbourne.vic.gov.au/resource/';
         $ped_url = 'cb85-mn2u.json';
+        $year = '?year=2017&year=2018';
 
-        $url = $base_url.$ped_url;
+        $url = $base_url.$ped_url.$year;
 
         $options = array(
             CURLOPT_RETURNTRANSFER => true,   // return web page
@@ -122,32 +124,33 @@ class PedestriansController extends Controller
 
         $ch = curl_init($url);
         curl_setopt_array($ch, $options);
+        echo 'hi;';
+        $peds = json_decode(curl_exec($ch), true);
 
-        $response_json = json_decode(curl_exec($ch), true);
-
-        for($i=0; $i < count($response_json); $i++){
+        // for($i=0; $i < count($response_json); $i++){
 
             // foreach ($response_json[0] as $station) {
             //     if(isset($station) && !empty($station) && $station != null)
             //     {
-                    $bikeStations[$i] = [
-                        'id' => $response_json[$i]['id'],
-                        'featurename' => $response_json[$i]['featurename'],
-                        'nbbikes' => $response_json[$i]['nbbikes'],
-                        'nbemptydoc' => $response_json[$i]['nbemptydoc'],
-                        'terminalname' => $response_json[$i]['terminalname'],
-                        'uploaddate' => $response_json[$i]['uploaddate']
-                    ];
+                    // $peds[$i] = [
+                    //     'id' => $response_json[$i]['id'],
+                    //     'featurename' => $response_json[$i]['featurename'],
+                    //     'nbbikes' => $response_json[$i]['nbbikes'],
+                    //     'nbemptydoc' => $response_json[$i]['nbemptydoc'],
+                    //     'terminalname' => $response_json[$i]['terminalname'],
+                    //     'uploaddate' => $response_json[$i]['uploaddate']
+                    // ];
             //     }
             // }
-        }
+        // }
         /*
 
         */
 
         curl_close($ch);
+        var_dump($peds);
 
-        return view('bikeStations.api')
-                ->with('stations', $bikeStations);
+        return view('pedestrians.api')
+                ->with('peds', $peds);
     }
 }
