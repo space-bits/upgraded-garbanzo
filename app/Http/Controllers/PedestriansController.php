@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\BikeStation;
 use Illuminate\Http\Request;
-use DB;
 
-class BikeStationsController extends Controller
+class PedestrianController extends Controller
 {
+    protected $base_url = 'https://data.melbourne.vic.gov.au/resource/';
+    protected $ped_url = 'cb85-mn2u.json';
+
     /**
      * Display a listing of the resource.
      *
@@ -39,7 +40,7 @@ class BikeStationsController extends Controller
      */
     public function store(Request $request)
     {
-        // DB::insert();
+        DB::insert();
     }
 
     /**
@@ -48,10 +49,9 @@ class BikeStationsController extends Controller
      * @param  \App\BikeStation  $bikeStation
      * @return \Illuminate\Http\Response
      */
-    public function show(BikeStation $bikeStation)
+    public function show(Pedestrian $pedestrian)
     {
-        if(DB::query('select * from bikestations where id equals $bikeStation->id')->count() != 0 )
-            return view('bikeStations.show', compact('bikeStation'));
+        return view('pedestrians.show', compact('pedestrian'));
     }
 
     /**
@@ -62,9 +62,7 @@ class BikeStationsController extends Controller
     **/
     public function counts(BikeStation $bikeStation)
     {
-        $bikeStations = BikeStation::bikeCounts();
 
-        return view('bikeStations.counts', compact('bikeStations'));
     }
 
     /**
@@ -73,7 +71,7 @@ class BikeStationsController extends Controller
      * @param  \App\BikeStation  $bikeStation
      * @return \Illuminate\Http\Response
      */
-    public function edit(BikeStation $bikeStation)
+     public function edit(Pedestrian $ped)
     {
         //
     }
@@ -85,7 +83,7 @@ class BikeStationsController extends Controller
      * @param  \App\BikeStation  $bikeStation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BikeStation $bikeStation)
+    public function update(Request $request, Pedestrian $ped)
     {
         //
     }
@@ -96,23 +94,21 @@ class BikeStationsController extends Controller
      * @param  \App\BikeStation  $bikeStation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(BikeStation $bikeStation)
+    public function destroy()
     {
 
     }
 
     /**
-    *   Get the open data for bike stations
+    *   Get the open data for pedestrians
     *
     * @return \Illuminate\Http\Response
     **/
-    public function getOpenBikeData()
+    public function getOpenPedData()
     {
         //https://stackoverflow.com/questions/6516902/how-to-get-response-using-curl-in-php#6518125
-        $base_url = 'https://data.melbourne.vic.gov.au/resource/';
-        $bike_url = 'qnjw-wgaj.json';
 
-        $url = $base_url.$bike_url;
+        $url = $base_url.$ped_url;
 
         $options = array(
             CURLOPT_RETURNTRANSFER => true,   // return web page
@@ -148,29 +144,7 @@ class BikeStationsController extends Controller
             // }
         }
         /*
-        Array
-        (
-            [0] => Array
-            (
-                [coordinates] => Array
-                (
-                    [type] => Point
-                    [coordinates] => Array
-                    (
-                        [0] => 144.967814
-                        [1] => -37.817523
-                    )
-                )
-                [featurename] => Federation Square -
-                                Flinders St / Swanston St - City
-                [id] => 4
-                [nbbikes] => 14
-                [nbemptydoc] => 11
-                [terminalname] => 60001
-                [uploaddate] => 2017-09-29T11:15:06.000
-            )
-            ...
-        )
+
         */
 
         curl_close($ch);
