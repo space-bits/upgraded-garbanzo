@@ -24,7 +24,7 @@ class CreateBikeStationsTable extends Migration
             $table->datetime('uploaddate');
             $table->timestamps();
 
-            $table->primary('id');
+            $table->primary('id','uploaddate');
         });
     }
 
