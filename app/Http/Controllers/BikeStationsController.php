@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\BikeStation;
 use Illuminate\Http\Request;
+use DB;
 
 class BikeStationsController extends Controller
 {
@@ -38,7 +39,7 @@ class BikeStationsController extends Controller
      */
     public function store(Request $request)
     {
-        DB::insert();
+        // DB::insert();
     }
 
     /**
@@ -49,7 +50,8 @@ class BikeStationsController extends Controller
      */
     public function show(BikeStation $bikeStation)
     {
-        return view('bikeStations.show', compact('bikeStation'));
+        if(DB::query('select * from bikestations where id equals $bikeStation->id')->count() != 0 )
+            return view('bikeStations.show', compact('bikeStation'));
     }
 
     /**

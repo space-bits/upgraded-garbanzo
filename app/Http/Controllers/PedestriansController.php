@@ -49,9 +49,9 @@ class PedestrianController extends Controller
      * @param  \App\BikeStation  $bikeStation
      * @return \Illuminate\Http\Response
      */
-    public function show(BikeStation $bikeStation)
+    public function show(Pedestrian $pedestrian)
     {
-        return view('bikeStations.show', compact('bikeStation'));
+        return view('pedestrians.show', compact('pedestrian'));
     }
 
     /**
@@ -62,9 +62,7 @@ class PedestrianController extends Controller
     **/
     public function counts(BikeStation $bikeStation)
     {
-        $bikeStations = BikeStation::bikeCounts();
 
-        return view('bikeStations.counts', compact('bikeStations'));
     }
 
     /**
@@ -73,7 +71,7 @@ class PedestrianController extends Controller
      * @param  \App\BikeStation  $bikeStation
      * @return \Illuminate\Http\Response
      */
-    public function edit(BikeStation $bikeStation)
+     public function edit(Pedestrian $ped)
     {
         //
     }
@@ -85,7 +83,7 @@ class PedestrianController extends Controller
      * @param  \App\BikeStation  $bikeStation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BikeStation $bikeStation)
+    public function update(Request $request, Pedestrian $ped)
     {
         //
     }
@@ -96,17 +94,17 @@ class PedestrianController extends Controller
      * @param  \App\BikeStation  $bikeStation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(BikeStation $bikeStation)
+    public function destroy()
     {
 
     }
 
     /**
-    *   Get the open data for bike stations
+    *   Get the open data for pedestrians
     *
     * @return \Illuminate\Http\Response
     **/
-    public function getOpenBikeData()
+    public function getOpenPedData()
     {
         //https://stackoverflow.com/questions/6516902/how-to-get-response-using-curl-in-php#6518125
 
