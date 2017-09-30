@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Pedestrian;
+use Iluminate\Http\Request;
 
-class PedestrianController extends Controller
+class PedestriansController extends Controller
 {
-    protected $base_url = 'https://data.melbourne.vic.gov.au/resource/';
-    protected $ped_url = 'cb85-mn2u.json';
 
     /**
      * Display a listing of the resource.
@@ -16,10 +15,7 @@ class PedestrianController extends Controller
      */
     public function index()
     {
-        // Defined in BikeStation model
-        $bikeStations = BikeStation::all();
 
-        return view('bikeStations.index', compact('bikeStations'));
     }
 
     /**
@@ -60,7 +56,7 @@ class PedestrianController extends Controller
     *   @param  \App\BikeStation  $bikeStation
     *   @return \Illuminate\Http\Response
     **/
-    public function counts(BikeStation $bikeStation)
+    public function counts()
     {
 
     }
@@ -107,6 +103,8 @@ class PedestrianController extends Controller
     public function getOpenPedData()
     {
         //https://stackoverflow.com/questions/6516902/how-to-get-response-using-curl-in-php#6518125
+        $base_url = 'https://data.melbourne.vic.gov.au/resource/';
+        $ped_url = 'cb85-mn2u.json';
 
         $url = $base_url.$ped_url;
 
