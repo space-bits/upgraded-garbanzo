@@ -7,9 +7,6 @@ use Illuminate\Http\Request;
 
 class BikeStationsController extends Controller
 {
-    protected $base_url = 'https://data.melbourne.vic.gov.au/resource/';
-    protected $bike_url = 'qnjw-wgaj.json';
-
     /**
      * Display a listing of the resource.
      *
@@ -110,8 +107,10 @@ class BikeStationsController extends Controller
     public function getOpenBikeData()
     {
         //https://stackoverflow.com/questions/6516902/how-to-get-response-using-curl-in-php#6518125
+        $base_url = 'https://data.melbourne.vic.gov.au/resource/';
+        $bike_url = 'qnjw-wgaj.json';
 
-        $url = 'https://data.melbourne.vic.gov.au/resource/qnjw-wgaj.json';
+        $url = $base_url.$bike_url;
 
         $options = array(
             CURLOPT_RETURNTRANSFER => true,   // return web page

@@ -5,9 +5,9 @@ use App\BikeStation;
 Route::get('/', 'LayoutController@index');
 Route::get('/example', 'LayoutController@example');
 
-Route::get('/bikestations', 'BikeStationsController@index');
-Route::get('/bikestations/{id}', 'BikeStationsController@show');
-Route::get('/bikes/api', 'BikeStationsController@getOpenBikeData');
+Route::get('/stations', 'BikeStationsController@index');
+Route::get('/station/{id}', 'BikeStationsController@show');
+Route::get('/stations/api', 'BikeStationsController@getOpenBikeData');
 
 Route::get('/pedestrians', 'pedestriansController@getOpenPedestrianData');
 // Route::get('/pedestrians/{id}', 'pedestriansController@getOpenPedestrianData');
