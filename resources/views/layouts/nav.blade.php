@@ -3,7 +3,7 @@
     <div class="navbar-collapse" id="navbars">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-            <a class="nav-link" href='{!! url('/bikes/api'); !!}'>Bikes</a>
+            <a class="nav-link" href='{!! url('/stations/api'); !!}'>Bikes</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href='{!! url('/pedestrians/api'); !!}'>Pedestrians</a>
