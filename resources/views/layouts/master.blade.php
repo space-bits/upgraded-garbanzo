@@ -19,7 +19,6 @@
     <link href="app.css" rel="stylesheet">
 </head>
 <body>
-    @include('layouts.nav')
 
     <div class="content container">
         @yield('content')
