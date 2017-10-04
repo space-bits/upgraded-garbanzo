@@ -81,19 +81,19 @@
                         <tr>
                             <th>ID</th>
                             <th>Terminal Name</th>
-                            <th>Latititude</th>
-                            <th>Longtitude</th>
-                            <th>Header</th>
+                            <th>Available Bikes</th>
+                            <th>Bikes in use</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($stations as $station)
                         <tr>
-                            <td>example tr</td>
-                            <td>more columm data</td>
-                            <td>oh look more</td>
-                            <td>just one more now</td>
-                            <td>wew we did it</td>
+                            <td>{{ $station['id'] }}</td>
+                            <td>{{ $station['featurename'] }}</td>
+                            <td>{{ $station['nbbikes'] }}</td>
+                            <td>{{ $station['nbemptydoc'] }}</td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
