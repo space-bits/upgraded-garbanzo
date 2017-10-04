@@ -177,4 +177,9 @@ class BikeStationsController extends Controller
         return view('bikeStations.api')
                 ->with('stations', $bikeStations);
     }
+
+    public function storeData() {
+
+    
+    }
 }
