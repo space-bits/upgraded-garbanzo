@@ -4,7 +4,7 @@
 This is a cloud application for RMIT Cloud Computing, semester 2, 2017, by Rob Laine & Gabriel Haines  
 
 ## Brief
-The project relies on an AWS Beanstalk instance. It is written in php relying on the Laravel and bootstrap frameworks.  
+@Q@# The project relies on an AWS Beanstalk instance. It is written in php relying on the Laravel and bootstrap frameworks.  
 
 ### APIs used
 [Pedestrian data (hourly)]{https://data.melbourne.vic.gov.au/resource/cb85-mn2u.json}  
