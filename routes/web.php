@@ -8,7 +8,7 @@ Route::get('/example', 'LayoutController@example');
 
 Route::get('/stations', 'BikeStationsController@index');
 Route::get('/stations/{id}', 'BikeStationsController@show');
-Route::get('/stations/api', 'BikeStationsController@getOpenBikeData');
+Route::get('/bikes/api', 'BikeStationsController@getOpenBikeData');
 
 Route::get('/pedestrians', 'PedestriansController@index');
 Route::get('/pedestrians/{id}', 'PedestriansController@show');
