@@ -180,6 +180,6 @@ class BikeStationsController extends Controller
 
     public function storeData() {
 
-    
+
     }
 }
