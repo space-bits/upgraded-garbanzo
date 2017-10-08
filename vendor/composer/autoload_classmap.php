@@ -16,7 +16,7 @@ return array(
     'App\\Http\\Controllers\\BikeStationsController' => $baseDir . '/app/Http/Controllers/BikeStationsController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\LayoutController' => $baseDir . '/app/Http/Controllers/LayoutController.php',
-    'App\\Http\\Controllers\\PedestrianController' => $baseDir . '/app/Http/Controllers/PedestriansController.php',
+    'App\\Http\\Controllers\\PedestriansController' => $baseDir . '/app/Http/Controllers/PedestriansController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',
     'App\\Http\\Middleware\\RedirectIfAuthenticated' => $baseDir . '/app/Http/Middleware/RedirectIfAuthenticated.php',
