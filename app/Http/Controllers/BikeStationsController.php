@@ -107,6 +107,7 @@ class BikeStationsController extends Controller
     **/
     public function getOpenBikeData()
     {
+
         //https://stackoverflow.com/questions/6516902/how-to-get-response-using-curl-in-php#6518125
         $base_url = 'https://data.melbourne.vic.gov.au/resource/';
         $bike_url = 'qnjw-wgaj.json';
