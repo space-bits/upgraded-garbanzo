@@ -1,5 +1,5 @@
-@extends('master')
+@extends('layouts.master')
 
-@section('content');
-<h1>Error! Item {{$id}} not found in database.</h1>
+@section('content')
+<h1>Error! Item not found in database.</h1>
 @stop
