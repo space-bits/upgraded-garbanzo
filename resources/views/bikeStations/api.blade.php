@@ -49,7 +49,11 @@
                 </div>
             </section>
 
-            <h2>Section title</h2>
+            {{ Form::open(array('route' => 'bikeStations.api')) }}
+                
+            {{ Form::close() }}
+
+            <h2>Stations</h2>
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>

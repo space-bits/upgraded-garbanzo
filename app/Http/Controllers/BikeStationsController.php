@@ -130,11 +130,11 @@ class BikeStationsController extends Controller
 
         $response_json = json_decode(curl_exec($ch), true);
 
-        // Error checking ffor curl get request.
-        if(emptyArray($response_json)) {
-            return view('layouts.errors')
-                -> with('errormsg', "Error! No returned data from request. Are you online?");
-        }
+        // Error checking for curl get request.
+        // if(emptyArray($response_json)) {
+        //     return view('layouts.errors')
+        //         -> with('errormsg', "Error! No returned data from request. Are you online?");
+        // }
 
         for($i=0; $i < count($response_json); $i++){
 
