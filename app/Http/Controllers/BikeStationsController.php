@@ -129,6 +129,7 @@ class BikeStationsController extends Controller
         curl_setopt_array($ch, $options);
 
         $response_json = json_decode(curl_exec($ch), true);
+
         // Error checking ffor curl get request.
         if(emptyArray($response_json)) {
             return view('layouts.errors')
