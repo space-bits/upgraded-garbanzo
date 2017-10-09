@@ -50,19 +50,19 @@
             </section>
             <div class="form">
             {!! Form::open(['url' => '/bikes/api', 'method' => 'get']) !!}
-            {!! Form::select('day', array(
-                'Mon' => 'Monday',
-                'Tue' => 'Tuesday',
-                'Wed' => 'Wednesday',
-                'Thu' => 'Thursday',
-                'Fri' => 'Friday',
-                'Sat' => 'Saturday',
-                'Sun' => 'Sunday',
-                ),
-                'Mon')
-            !!}
-                <!-- Default Value is Monday -->
-            {!! Form::submit('Select Day') !!}
+                {!! Form::select('day', array(
+                    'Monday' => 'Monday',
+                    'Tuesday' => 'Tuesday',
+                    'Wednesday' => 'Wednesday',
+                    'Thursday' => 'Thursday',
+                    'Friday' => 'Friday',
+                    'Saturday' => 'Saturday',
+                    'Sunday' => 'Sunday',
+                    ),
+                    'Monday')
+                !!}
+                    <!-- Default Value is Monday -->
+                {!! Form::submit('Choose Day') !!}
             {!! Form::close() !!}
             </div>
 
