@@ -61,6 +61,7 @@
                 ),
                 'Mon') }}
                 <!-- Default Value is Monday -->
+                {{ Form::submit('Select') }}
             {{ Form::close() }}
             </div>
             <h2>Stations</h2>
