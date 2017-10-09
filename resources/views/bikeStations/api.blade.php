@@ -48,11 +48,21 @@
                     <span class="text-muted">Something else</span>
                 </div>
             </section>
-
-            {{ Form::open(array('route' => 'bikeStations.api')) }}
-            {{ Form::select('size', array('L' => 'Large', 'S' => 'Small'), 'S') }}
+            <div class="form">
+            {{ Form::open(array('url' => '/bikes/api')) }}
+            {{ Form::select('size', array(
+                'Mon' => 'Monday',
+                'Tue' => 'Tuesday',
+                'Wed' => 'Wednesday',
+                'Thu' => 'Thursday',
+                'Fri' => 'Friday',
+                'Sat' => 'Saturday',
+                'Sun' => 'Sunday',
+                ),
+                'Mon') }}
+                <!-- Default Value is Monday -->
             {{ Form::close() }}
-
+            </div>
             <h2>Stations</h2>
             <div class="table-responsive">
                 <table class="table table-striped">
