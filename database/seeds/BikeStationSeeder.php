@@ -11,22 +11,21 @@ class BikeStationSeeder extends Seeder
      */
     public function run()
     {
-        $faker = \Faker\Factory::create();
+        $factory->define(App\BikeStation::class, function (Faker $faker) {
 
-        for($i = 0; $i < 10; ++$i)
-        {
-            BikeStation::create([
-                'id'=>$faker->id,
-                'featurname'=>$faker->sentence,
-                'latitude'=>$faker->float,
-                'logtitude' => $faker->float,
-                'nbbikes'=>$faker->integer,
-                'nbemptydoc'=>$faker->integer,
-                'terminalname'=>$faker->sentence,
-                'uploaddate'=>$faker->datetime,
-                'created_at'=>$faker->datetime,
-                'updated_at'=>$faker->datetime
-            ]);
+            for($i = 0; $i < 10; ++$i)
+            {
+                BikeStation::create([
+                    'longtitude'=>$faker->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = 255),
+                    'latitude'=>$faker->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = 255),
+                    'featurename'=>$faker->sentence,
+                    'id'=>$faker->numberBetween($min = 0, $max = 1000),
+                    'nbbikes'=>$faker->numberBetween($min = 0, $max = 1000),
+                    'nbemptydoc'=>$faker->numberBetween($min = 0, $max = 1000),
+                    'terminalname'=>$faker->numberBetween($min = 0, $max = 1000),
+                    'uploaddate'=>$faker->dateTime($max = 'now')
+                ]);
+            }
         }
     }
 }

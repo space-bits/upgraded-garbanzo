@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class BikeStation extends Model
 {
+    protect $fillable=['',''];
+
     public static function bikeCounts()
     {
         return static::selectRaw(id, featurename, nbbikes)
@@ -22,4 +24,5 @@ class BikeStation extends Model
     {
         return $query->where('nbbikes', '>', 0);
     }
+
 }
