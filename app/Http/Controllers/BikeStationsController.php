@@ -178,8 +178,4 @@ class BikeStationsController extends Controller
                 ->with('stations', $bikeStations);
     }
 
-    public function storeData() {
-
-
-    }
 }
