@@ -48,11 +48,10 @@
                     <span class="text-muted">Something else</span>
                 </div>
             </section>
-            <?php
-                echo Form::open(array('route' => 'bikeStations.api'));
-                echo Form::select('size', array('L' => 'Large', 'S' => 'Small'), 'S');
-                echo Form::close();
-            ?>
+
+            {{ Form::open(array('route' => 'bikeStations.api')) }}
+            {{ Form::select('size', array('L' => 'Large', 'S' => 'Small'), 'S') }}
+            {{ Form::close() }}
 
             <h2>Stations</h2>
             <div class="table-responsive">
