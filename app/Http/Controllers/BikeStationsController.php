@@ -107,7 +107,8 @@ class BikeStationsController extends Controller
     **/
     public function getOpenBikeData()
     {
-
+        $bikeStations = array();
+        
         //https://stackoverflow.com/questions/6516902/how-to-get-response-using-curl-in-php#6518125
         $base_url = 'https://data.melbourne.vic.gov.au/resource/';
         $bike_url = 'qnjw-wgaj.json';
@@ -118,7 +119,7 @@ class BikeStationsController extends Controller
         // Pass day and year paramets from the view and then modify the api call
         // Create a different query based on the forms
         if(!empty($year) || !empty($day)) {
-            
+
         } else {
             $url = $base_url.$bike_url;
         }
