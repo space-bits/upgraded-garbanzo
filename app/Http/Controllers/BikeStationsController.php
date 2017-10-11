@@ -110,7 +110,6 @@ class BikeStationsController extends Controller
         $bikeStations = array();
 
         //https://stackoverflow.com/questions/6516902/how-to-get-response-using-curl-in-php#6518125
-
         $base_url = 'https://data.melbourne.vic.gov.au/resource/';
         $bike_url = 'qnjw-wgaj.json';
         $query = "";
@@ -127,6 +126,7 @@ class BikeStationsController extends Controller
         if(!empty($_POST) && isset($_POST['mdate'])){
             $query = $query."-".$_POST['mdate']."T04:45:15.000";
         }
+
 
         $url = $base_url.$bike_url.$query;
 

@@ -56,6 +56,7 @@
             <!-- Day selector -->
             <div class="form">
                 {!! Form::open(['url' => '/bikes/api', 'method' => 'post']) !!}
+
                 {!! Form::input('text', 'datepicker') !!}
 
                 {!! Form::select('mdate',
@@ -110,6 +111,7 @@
                         ))
                     !!}
                     {!! Form::selectYear('year', 2012, 2017) !!}
+
 
                     {!! Form::submit('Choose!') !!}
                 {!! Form::close() !!}
