@@ -24,7 +24,7 @@
         </nav> -->
 
         <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
-            <h1>Dashboard</h1>
+            <h1>Bike Stations</h1>
 
             <section class="row text-center placeholders">
                 <div class="col-6 col-sm-3 placeholder">
@@ -48,8 +48,26 @@
                     <span class="text-muted">Something else</span>
                 </div>
             </section>
+            <div class="form">
+            {!! Form::open(['url' => '/bikes/api', 'method' => 'get']) !!}
+                {!! Form::select('day', array(
+                    'Monday' => 'Monday',
+                    'Tuesday' => 'Tuesday',
+                    'Wednesday' => 'Wednesday',
+                    'Thursday' => 'Thursday',
+                    'Friday' => 'Friday',
+                    'Saturday' => 'Saturday',
+                    'Sunday' => 'Sunday',
+                    ),
+                    'Monday')
+                !!}
+                    <!-- Default Value is Monday -->
+                {!! Form::submit('Choose Day') !!}
+            {!! Form::close() !!}
+            </div>
 
-            <h2>Section title</h2>
+            {{ $_GET['day'] }}
+
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>

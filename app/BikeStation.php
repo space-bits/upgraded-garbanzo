@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class BikeStation extends Model
 {
-    protect $fillable=['',''];
+    protect $fillable=['id','featurename','nbbikes',
+            'nbemptydoc','terminalname','uploaddate'];
 
     public static function bikeCounts()
     {
