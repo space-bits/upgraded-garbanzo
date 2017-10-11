@@ -51,38 +51,17 @@
 
             <!-- Day selector -->
             <div class="form">
-            {!! Form::open(['url' => '/bikes/api', 'method' => 'get']) !!}
-                {!! Form::select('day', array(
-                    'Monday' => 'Monday',
-                    'Tuesday' => 'Tuesday',
-                    'Wednesday' => 'Wednesday',
-                    'Thursday' => 'Thursday',
-                    'Friday' => 'Friday',
-                    'Saturday' => 'Saturday',
-                    'Sunday' => 'Sunday',
-                    ),
-                    'Monday')
-                !!}
-                    <!-- Default Value is Monday -->
-                {!! Form::submit('Choose Day') !!}
-            {!! Form::close() !!}
-            </div>
+                {!! Form::open(['url' => '/bikes/api', 'method' => 'get']) !!}
+                    {!! Form::selectRange('mdate', 1, 31) !!}
 
-            <!-- Year selector: !!NOTE!! Thise needs work -->
-            <div class="form">
-            {!! Form::open(['url' => '/bikes/api', 'method' => 'get']) !!}
-                {!! Form::select('year', array(
-                    '2013' => '2013',
-                    '2014' => '2014',
-                    '2015' => '2015',
-                    '2016' => '2016',
-                    '2017' => '2017',
-                    ),
-                    '2017')
-                !!}
-                    <!-- Default Value is Monday -->
-                {!! Form::submit('Choose Year') !!}
-            {!! Form::close() !!}
+                    {!! Form::selectMonth('month') !!}
+
+                    {!! Form::selectRange('year', 2012, 2017) !!}
+
+                    Time of day {!! Form::selectRange('time', 1, 24) !!}
+
+                    {!! Form::submit('Choose!') !!}
+                {!! Form::close() !!}
             </div>
 
             @if(isset($_GET['day']))
