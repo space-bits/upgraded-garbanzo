@@ -110,19 +110,25 @@ class BikeStationsController extends Controller
         $bikeStations = array();
 
         //https://stackoverflow.com/questions/6516902/how-to-get-response-using-curl-in-php#6518125
+
         $base_url = 'https://data.melbourne.vic.gov.au/resource/';
         $bike_url = 'qnjw-wgaj.json';
+        $query = "";
 
-        $year;
-        $day;
-
-        // Pass day and year paramets from the view and then modify the api call
-        // Create a different query based on the forms
-        if(!empty($year) || !empty($day)) {
-
-        } else {
-            $url = $base_url.$bike_url;
+        // Build query for the api call based on form
+        if(!empty($_POST) && isset($_POST['year'])){
+            $query = "?uploaddate=".$_POST['year'];
         }
+
+        if(!empty($_POST) && isset($_POST['month'])){
+            $query = $query."-".$_POST['month'];
+        }
+
+        if(!empty($_POST) && isset($_POST['mdate'])){
+            $query = $query."-".$_POST['mdate']."T04:45:15.000";
+        }
+
+        $url = $base_url.$bike_url.$query;
 
         $options = array(
             CURLOPT_RETURNTRANSFER => true,   // return web page
@@ -144,7 +150,7 @@ class BikeStationsController extends Controller
         // Error checking for curl get request.
         // if(emptyArray($response_json)) {
         //     return view('layouts.errors')
-        //         -> with('errormsg', "Error! No returned data from request. Are you online?");
+        //         -> with('errormsg', "Error! Invalid date selection.");
         // }
 
         for($i=0; $i < count($response_json); $i++){

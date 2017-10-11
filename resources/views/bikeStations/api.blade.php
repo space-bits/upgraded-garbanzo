@@ -1,6 +1,10 @@
 @extends('layouts.master')
 
 @section('content')
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
 
 <div class="container-fluid">
     <div class="row">
@@ -51,43 +55,66 @@
 
             <!-- Day selector -->
             <div class="form">
-            {!! Form::open(['url' => '/bikes/api', 'method' => 'get']) !!}
-                {!! Form::select('day', array(
-                    'Monday' => 'Monday',
-                    'Tuesday' => 'Tuesday',
-                    'Wednesday' => 'Wednesday',
-                    'Thursday' => 'Thursday',
-                    'Friday' => 'Friday',
-                    'Saturday' => 'Saturday',
-                    'Sunday' => 'Sunday',
-                    ),
-                    'Monday')
-                !!}
-                    <!-- Default Value is Monday -->
-                {!! Form::submit('Choose Day') !!}
-            {!! Form::close() !!}
-            </div>
+                {!! Form::open(['url' => '/bikes/api', 'method' => 'post']) !!}
+                {!! Form::input('text', 'datepicker') !!}
 
-            <!-- Year selector: !!NOTE!! Thise needs work -->
-            <div class="form">
-            {!! Form::open(['url' => '/bikes/api', 'method' => 'get']) !!}
-                {!! Form::select('year', array(
-                    '2013' => '2013',
-                    '2014' => '2014',
-                    '2015' => '2015',
-                    '2016' => '2016',
-                    '2017' => '2017',
-                    ),
-                    '2017')
-                !!}
-                    <!-- Default Value is Monday -->
-                {!! Form::submit('Choose Year') !!}
-            {!! Form::close() !!}
-            </div>
+                {!! Form::select('mdate',
+                        array(
+                            '01' => '1',
+                            '02' => '2',
+                            '03' => '3',
+                            '04' => '4',
+                            '05' => '5',
+                            '06' => '6',
+                            '07' => '7',
+                            '08' => '8',
+                            '09' => '9',
+                            '10' => '10',
+                            '11' => '11',
+                            '12' => '12',
+                            '13' => '13',
+                            '14' => '14',
+                            '15' => '15',
+                            '16' => '16',
+                            '17' => '17',
+                            '18' => '18',
+                            '19' => '19',
+                            '20' => '20',
+                            '21' => '21',
+                            '22' => '22',
+                            '23' => '23',
+                            '24' => '24',
+                            '25' => '25',
+                            '26' => '26',
+                            '27' => '27',
+                            '28' => '28',
+                            '29' => '29',
+                            '30' => '30',
+                            '31' => '31'
+                        ))
+                    !!}
+                    {!! Form::select('month',
+                        array(
+                            '01' => 'Jan',
+                            '02' => 'Feb',
+                            '03' => 'Mar',
+                            '04' => 'Apr',
+                            '05' => 'May',
+                            '06' => 'Jun',
+                            '07' => 'Jul',
+                            '08' => 'Aug',
+                            '09' => 'Sep',
+                            '10' => 'Oct',
+                            '11' => 'Nov',
+                            '12' => 'Dec'
+                        ))
+                    !!}
+                    {!! Form::selectYear('year', 2012, 2017) !!}
 
-            @if(isset($_GET['day']))
-                {{ $_GET['day'] }}
-            @endif
+                    {!! Form::submit('Choose!') !!}
+                {!! Form::close() !!}
+
+            </div>
 
             <div class="table-responsive">
                 <table class="table table-striped">
