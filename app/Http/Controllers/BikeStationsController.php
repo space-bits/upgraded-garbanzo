@@ -124,8 +124,9 @@ class BikeStationsController extends Controller
         }
 
         if(!empty($_GET) && isset($_GET['mdate'])){
-            $query = $query."-".$_GET['mdate'];
+            $query = $query."-".$_GET['mdate']."T04:45:15.000";
         }
+
         var_dump($query);
         $url = $base_url.$bike_url.$query;
 
