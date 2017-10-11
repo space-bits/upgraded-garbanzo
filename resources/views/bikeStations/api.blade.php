@@ -85,7 +85,9 @@
             {!! Form::close() !!}
             </div>
 
-            {{ $_GET['day'] }}
+            @if(isset($_GET['day']))
+                {{ $_GET['day'] }}
+            @endif
 
             <div class="table-responsive">
                 <table class="table table-striped">

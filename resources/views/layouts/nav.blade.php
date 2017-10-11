@@ -5,9 +5,6 @@
         <li class="nav-item">
             <a class="nav-link" href='{!! url('/bikes/api'); !!}'>Bikes</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href='{!! url('/pedestrians/api'); !!}'>Pedestrians</a>
-        </li>
       </ul>
       <!-- Search bar; Not required but keep as a contingency -->
       <!-- <form class="form-inline mt-2 mt-md-0">
