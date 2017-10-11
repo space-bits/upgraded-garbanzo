@@ -113,10 +113,14 @@ class BikeStationsController extends Controller
         $base_url = 'https://data.melbourne.vic.gov.au/resource/';
         $bike_url = 'qnjw-wgaj.json';
 
-        $year = $_GET['year'];
+        $year;
         $day;
 
-        $url = $base_url.$bike_url."?year=".$year;
+        if(!empty($_GET) && isset($_GET['year'])){
+            $year = $_GET['year'];
+        }
+
+        $url = $base_url.$bike_url;#."?year=".$year;
 
         $options = array(
             CURLOPT_RETURNTRANSFER => true,   // return web page
@@ -138,7 +142,7 @@ class BikeStationsController extends Controller
         // Error checking for curl get request.
         // if(emptyArray($response_json)) {
         //     return view('layouts.errors')
-        //         -> with('errormsg', "Error! No returned data from request. Are you online?");
+        //         -> with('errormsg', "Error! Invalid date selection.");
         // }
 
         for($i=0; $i < count($response_json); $i++){
