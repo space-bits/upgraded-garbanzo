@@ -3,7 +3,7 @@
 use App\BikeStation;
 use App\Pedestrian;
 
-Route::get('/', 'LayoutController@index');
+Route::get('/', 'BikeStationsController@getOpenBikeData');
 Route::get('/example', 'LayoutController@example');
 
 Route::get('/stations', 'BikeStationsController@index');
