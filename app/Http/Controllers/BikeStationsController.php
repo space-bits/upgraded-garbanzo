@@ -109,7 +109,8 @@ class BikeStationsController extends Controller
     {
         $bikeStations = array();
 
-        # https://stackoverflow.com/questions/6516902/how-to-get-response-using-curl-in-php#6518125
+        //https://stackoverflow.com/questions/6516902/how-to-get-response-using-curl-in-php#6518125
+
         $base_url = 'https://data.melbourne.vic.gov.au/resource/';
         $bike_url = 'qnjw-wgaj.json';
         $query = "";
@@ -157,13 +158,17 @@ class BikeStationsController extends Controller
             // foreach ($response_json[0] as $station) {
             //     if(isset($station) && !empty($station) && $station != null)
             //     {
+
+            
                     $bikeStations[$i] = [
                         'id' => $response_json[$i]['id'],
                         'featurename' => $response_json[$i]['featurename'],
                         'nbbikes' => $response_json[$i]['nbbikes'],
                         'nbemptydoc' => $response_json[$i]['nbemptydoc'],
                         'terminalname' => $response_json[$i]['terminalname'],
-                        'uploaddate' => $response_json[$i]['uploaddate']
+                        'uploaddate' => $response_json[$i]['uploaddate'],
+                        'longitude' => $response_json[$i]['coordinates']['coordinates'][0],
+                        'latitude' => $response_json[$i]['coordinates']['coordinates'][1]
                     ];
             //     }
             // }
