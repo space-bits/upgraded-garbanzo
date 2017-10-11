@@ -1,6 +1,10 @@
 @extends('layouts.master')
 
 @section('content')
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
 
 <div class="container-fluid">
     <div class="row">
@@ -53,7 +57,9 @@
             <div class="form">
                 {!! Form::open(['url' => '/bikes/api', 'method' => 'post']) !!}
 
-                    {!! Form::select('mdate',
+                {!! Form::input('text', 'datepicker') !!}
+
+                {!! Form::select('mdate',
                         array(
                             '01' => '1',
                             '02' => '2',
@@ -105,6 +111,7 @@
                         ))
                     !!}
                     {!! Form::selectYear('year', 2012, 2017) !!}
+
 
                     {!! Form::submit('Choose!') !!}
                 {!! Form::close() !!}
