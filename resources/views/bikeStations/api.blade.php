@@ -52,29 +52,10 @@
             <!-- Day selector -->
             <div class="form">
                 {!! Form::open(['url' => '/bikes/api', 'method' => 'get']) !!}
+                
                     {!! Form::selectRange('mdate', 1, 31) !!}
-
-                    {!! Form::select('month',
-                        array(
-                            'JAN'=>'January',
-                            'FEB'=>'February',
-                            'MAR'=>'March',
-                            'APR'=>'April',
-                            'MAY'=>'May',
-                            'JUN'=>'June',
-                            'JUL'=>'July',
-                            'AUG'=>'August',
-                            'SEP'=>'September',
-                            'OCT'=>'October',
-                            'NOV'=>'November',
-                            'DEC'=>'December' )
-                        )
-
-                    !!}
-
+                    {!! Form::selectMonth('month') !!}
                     {!! Form::selectYear('year', 2012, 2017) !!}
-
-                    Hour: {!! Form::selectRange('hour', 1, 24) !!}
 
                     {!! Form::submit('Choose!') !!}
                 {!! Form::close() !!}
