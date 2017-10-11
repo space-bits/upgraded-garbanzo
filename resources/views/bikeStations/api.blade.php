@@ -52,8 +52,8 @@
             <!-- Day selector -->
             <div class="form">
                 {!! Form::open(['url' => '/bikes/api', 'method' => 'get']) !!}
-                
-                    {!! Form::selectRange('mdate', 1, 31) !!}
+
+                    {!! Form::selectRange('mdate', 01, 31) !!}
                     {!! Form::selectMonth('month') !!}
                     {!! Form::selectYear('year', 2012, 2017) !!}
 

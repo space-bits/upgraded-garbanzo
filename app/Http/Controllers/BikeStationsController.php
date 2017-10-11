@@ -109,24 +109,25 @@ class BikeStationsController extends Controller
     {
         $bikeStations = array();
 
-        //https://stackoverflow.com/questions/6516902/how-to-get-response-using-curl-in-php#6518125
+        # https://stackoverflow.com/questions/6516902/how-to-get-response-using-curl-in-php#6518125
         $base_url = 'https://data.melbourne.vic.gov.au/resource/';
         $bike_url = 'qnjw-wgaj.json';
+        $query = "";
 
-        $year;
-        $day;
-
+        // Build query for the api call based on form
         if(!empty($_GET) && isset($_GET['year'])){
-            $year = $_GET['year'];
-        }
-        if(!empty($_GET) && isset($_GET['mdate'])){
-            $mdate = $_GET['mdate'];
-        }
-        if(!empty($_GET) && isset($_GET['hour'])){
-            $hour = $_GET['hour'];
+            $query = "?uploaddate=".$_GET['year'];
         }
 
-        $url = $base_url.$bike_url;//."?year=2017";
+        if(!empty($_GET) && isset($_GET['month'])){
+            $query = $query."-".$_GET['month'];
+        }
+
+        if(!empty($_GET) && isset($_GET['mdate'])){
+            $query = $query."-".$_GET['mdate']."T04:45:15.000";
+        }
+
+        $url = $base_url.$bike_url.$query;
 
         $options = array(
             CURLOPT_RETURNTRANSFER => true,   // return web page
