@@ -130,51 +130,28 @@ class BikeStationsController extends Controller
 
         $response_json = json_decode(curl_exec($ch), true);
 
+        //counting total bike used and not it used
+        $bikesInUse = 0;
+        $bikesNotInUse = 0;
+
         for($i=0; $i < count($response_json); $i++){
 
-            // foreach ($response_json[0] as $station) {
-            //     if(isset($station) && !empty($station) && $station != null)
-            //     {
-                    $bikeStations[$i] = [
-                        'id' => $response_json[$i]['id'],
-                        'featurename' => $response_json[$i]['featurename'],
-                        'nbbikes' => $response_json[$i]['nbbikes'],
-                        'nbemptydoc' => $response_json[$i]['nbemptydoc'],
-                        'terminalname' => $response_json[$i]['terminalname'],
-                        'uploaddate' => $response_json[$i]['uploaddate']
-                    ];
-            //     }
-            // }
-        }
-        /*
-        Array
-        (
-            [0] => Array
-            (
-                [coordinates] => Array
-                (
-                    [type] => Point
-                    [coordinates] => Array
-                    (
-                        [0] => 144.967814
-                        [1] => -37.817523
-                    )
-                )
-                [featurename] => Federation Square -
-                                Flinders St / Swanston St - City
-                [id] => 4
-                [nbbikes] => 14
-                [nbemptydoc] => 11
-                [terminalname] => 60001
-                [uploaddate] => 2017-09-29T11:15:06.000
-            )
-            ...
-        )
-        */
+            $bikeStations[$i] = [
+                'id' => $response_json[$i]['id'],
+                'featurename' => $response_json[$i]['featurename'],
+                'nbbikes' => $response_json[$i]['nbbikes'],
+                'nbemptydoc' => $response_json[$i]['nbemptydoc'],
+                'terminalname' => $response_json[$i]['terminalname'],
+                'uploaddate' => $response_json[$i]['uploaddate']
+            ];
 
+            $bikesInUse += $response_json[$i]['nbbikes'];
+            $bikesNotInUse += $response_json[$i]['nbemptydoc'];
+        }
         curl_close($ch);
 
         return view('bikeStations.api')
-                ->with('stations', $bikeStations);
+                ->with('stations', $bikeStations)
+                ->with('bikesInUse', $bikesInUse);
     }
 }

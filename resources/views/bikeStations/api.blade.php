@@ -51,6 +51,8 @@
         <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
             <h1>Dashboard</h1>
 
+            {{ $bikesInUse }}
+
             <section class="row text-center placeholders">
                 <div class="col-6 col-sm-3 placeholder">
                     <img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
