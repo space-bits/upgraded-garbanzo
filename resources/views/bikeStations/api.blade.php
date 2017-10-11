@@ -57,7 +57,7 @@
             <div class="form">
                 {!! Form::open(['url' => '/bikes/api', 'method' => 'post']) !!}
 
-                {!! Form::input('text', 'datepicker') !!}
+                {!! Form::input('text', 'datepicker', ['class' => 'datepicker'] ) !!}
 
                 {!! Form::select('mdate',
                         array(
