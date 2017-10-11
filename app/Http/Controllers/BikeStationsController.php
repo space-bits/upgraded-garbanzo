@@ -127,7 +127,6 @@ class BikeStationsController extends Controller
             $query = $query."-".$_POST['mdate']."T04:45:15.000";
         }
 
-        var_dump($query);
         $url = $base_url.$bike_url.$query;
 
         $options = array(

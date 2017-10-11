@@ -1,6 +1,14 @@
 @extends('layouts.master')
 
 @section('content')
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+$(document).ready( function() {
+  $('#datepicker').datepicker();
+} );
+</script>
 
 <div class="container-fluid">
     <div class="row">
@@ -52,8 +60,9 @@
             <!-- Day selector -->
             <div class="form">
                 {!! Form::open(['url' => '/bikes/api', 'method' => 'post']) !!}
+                {!! Form::input('text', 'datepicker') !!}
 
-                    {!! Form::select('mdate',
+                {!! Form::select('mdate',
                         array(
                             '01' => '1',
                             '02' => '2',
