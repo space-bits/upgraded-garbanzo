@@ -119,8 +119,14 @@ class BikeStationsController extends Controller
         if(!empty($_GET) && isset($_GET['year'])){
             $year = $_GET['year'];
         }
+        if(!empty($_GET) && isset($_GET['mdate'])){
+            $mdate = $_GET['mdate'];
+        }
+        if(!empty($_GET) && isset($_GET['hour'])){
+            $hour = $_GET['hour'];
+        }
 
-        $url = $base_url.$bike_url;#."?year=".$year;
+        $url = $base_url.$bike_url;//."?year=2017";
 
         $options = array(
             CURLOPT_RETURNTRANSFER => true,   // return web page

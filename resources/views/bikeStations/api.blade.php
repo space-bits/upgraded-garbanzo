@@ -54,19 +54,32 @@
                 {!! Form::open(['url' => '/bikes/api', 'method' => 'get']) !!}
                     {!! Form::selectRange('mdate', 1, 31) !!}
 
-                    {!! Form::selectMonth('month') !!}
+                    {!! Form::select('month',
+                        array(
+                            'JAN'=>'January',
+                            'FEB'=>'February',
+                            'MAR'=>'March',
+                            'APR'=>'April',
+                            'MAY'=>'May',
+                            'JUN'=>'June',
+                            'JUL'=>'July',
+                            'AUG'=>'August',
+                            'SEP'=>'September',
+                            'OCT'=>'October',
+                            'NOV'=>'November',
+                            'DEC'=>'December' )
+                        )
 
-                    {!! Form::selectRange('year', 2012, 2017) !!}
+                    !!}
 
-                    Time of day {!! Form::selectRange('time', 1, 24) !!}
+                    {!! Form::selectYear('year', 2012, 2017) !!}
+
+                    Hour: {!! Form::selectRange('hour', 1, 24) !!}
 
                     {!! Form::submit('Choose!') !!}
                 {!! Form::close() !!}
-            </div>
 
-            @if(isset($_GET['day']))
-                {{ $_GET['day'] }}
-            @endif
+            </div>
 
             <div class="table-responsive">
                 <table class="table table-striped">
