@@ -51,7 +51,7 @@
 
             <!-- Day selector -->
             <div class="form">
-                {!! Form::open(['url' => '/bikes/api', 'method' => 'get']) !!}
+                {!! Form::open(['url' => '/bikes/api', 'method' => 'post']) !!}
 
                     {!! Form::select('mdate',
                         array(

@@ -115,16 +115,16 @@ class BikeStationsController extends Controller
         $query = "";
 
         // Build query for the api call based on form
-        if(!empty($_GET) && isset($_GET['year'])){
-            $query = "?uploaddate=".$_GET['year'];
+        if(!empty($_POST) && isset($_POST['year'])){
+            $query = "?uploaddate=".$_POST['year'];
         }
 
-        if(!empty($_GET) && isset($_GET['month'])){
-            $query = $query."-".$_GET['month'];
+        if(!empty($_POST) && isset($_POST['month'])){
+            $query = $query."-".$_POST['month'];
         }
 
-        if(!empty($_GET) && isset($_GET['mdate'])){
-            $query = $query."-".$_GET['mdate']."T04:45:15.000";
+        if(!empty($_POST) && isset($_POST['mdate'])){
+            $query = $query."-".$_POST['mdate']."T04:45:15.000";
         }
 
         var_dump($query);
