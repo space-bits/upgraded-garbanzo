@@ -48,6 +48,8 @@
                     <span class="text-muted">Something else</span>
                 </div>
             </section>
+
+            <!-- Day selector -->
             <div class="form">
             {!! Form::open(['url' => '/bikes/api', 'method' => 'get']) !!}
                 {!! Form::select('day', array(
@@ -66,7 +68,26 @@
             {!! Form::close() !!}
             </div>
 
-            {{ $_GET['day'] }}
+            <!-- Year selector: !!NOTE!! Thise needs work -->
+            <div class="form">
+            {!! Form::open(['url' => '/bikes/api', 'method' => 'get']) !!}
+                {!! Form::select('year', array(
+                    '2013' => '2013',
+                    '2014' => '2014',
+                    '2015' => '2015',
+                    '2016' => '2016',
+                    '2017' => '2017',
+                    ),
+                    '2017')
+                !!}
+                    <!-- Default Value is Monday -->
+                {!! Form::submit('Choose Year') !!}
+            {!! Form::close() !!}
+            </div>
+
+            @if(isset($_GET['day']))
+                {{ $_GET['day'] }}
+            @endif
 
             <div class="table-responsive">
                 <table class="table table-striped">

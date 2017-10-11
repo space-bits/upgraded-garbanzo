@@ -1,6 +1,6 @@
 <footer class="links">
     <a href="https://github.space-bits.io/upgraded-garbanzo">Documentation</a>
-    <a href="https://github.com/space-bits/upgraded-garbanzo">GitHub</a>
+    <a href="https://github.com/space-bits/upgraded-garbanzo">Github Repo</a>
 </footer>
 
 <!-- Bootstrap core JavaScript
