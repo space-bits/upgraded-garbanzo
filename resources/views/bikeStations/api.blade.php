@@ -126,18 +126,17 @@
                             <th>Terminal Name</th>
                             <th>Available Bikes</th>
                             <th>Bikes in use</th>
-                            <th>Last update</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($stations as $station)
                         <tr>
                             <td>{{ $station['id'] }}</td>
-                            <td><a href="https://www.google.com/maps/search/?api=1&query={{$station['latitude']}},{{$station['longitude']}}"> {{ $station['featurename'] }}</a></td>
+                            <td><a href="https://www.google.com/maps/search/
+                                ?api=1&query={{$station['latitude']}},{{$station['longitude']}}">
+                                    {{ $station['featurename'] }}</a></td>
                             <td>{{ $station['nbbikes'] }}</td>
                             <td>{{ $station['nbemptydoc'] }}</td>
-                            <td>{{ $station['uploaddate'] }}</td>
-                            <td>{{ $station['latitude'] }}</td>
                         </tr>
                         @endforeach
                     </tbody>
