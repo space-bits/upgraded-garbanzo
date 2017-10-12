@@ -16,8 +16,8 @@
         		yValueFormatString: "##0.00\"%\"",
         		indexLabel: "{label} {y}",
         		dataPoints: [
-        			{y: <?php echo json_encode(($totals[1] / ( $totals[0] + $totals[1] )), JSON_HEX_TAG); ?>, label: "In Use"},
-        			{y: <?php echo json_encode(($totals[1] / ( $totals[0] + $totals[1] )), JSON_HEX_TAG); ?>, label: "Available"}
+        			{y: <?php echo json_encode(($totals[1] / ( $totals[0] + $totals[1] )) * 100, JSON_HEX_TAG); ?>, label: "Bikes In Use"},
+        			{y: <?php echo json_encode(($totals[0] / ( $totals[0] + $totals[1] )) * 100, JSON_HEX_TAG); ?>, label: "Available Bikes"}
         		]
         	}]
         });
