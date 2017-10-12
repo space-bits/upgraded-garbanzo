@@ -17,7 +17,7 @@
                     {!! Form::input('text', 'datepicker', null, ['class'=>'datepicker']) !!}
 
                     {!! Form::select('mdate',
-                        [null => '--']+ array(
+                        array(
                             '01' => '1',
                             '02' => '2',
                             '03' => '3',
@@ -49,10 +49,10 @@
                             '29' => '29',
                             '30' => '30',
                             '31' => '31'
-                        ),'--', ['class'=>'dateTimeSelect'])
+                        ), ['class'=>'dateTimeSelect'])
                     !!}
                     {!! Form::select('month',
-                        [null => '--'] + array(
+                        array(
                             '01' => 'Jan',
                             '02' => 'Feb',
                             '03' => 'Mar',
@@ -65,7 +65,7 @@
                             '10' => 'Oct',
                             '11' => 'Nov',
                             '12' => 'Dec'
-                        ),'--', ['class'=>'dateTimeSelect'])
+                        ), ['class'=>'dateTimeSelect'])
                     !!}
                     {!! Form::selectYear('year', 2012, 2017, 2017, ['class'=>'dateTimeSelect']) !!}
 
