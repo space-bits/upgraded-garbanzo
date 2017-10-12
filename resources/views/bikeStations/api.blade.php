@@ -4,63 +4,20 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-
-
 <div class="container-fluid">
     <div class="row">
         @include('layouts.nav')
-<!--
-        <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
-            <ul class="nav nav-pills flex-column">
-                <li class="nav-item">
-                    <a class="nav-link active" href='{!! url('/'); !!}'>Overview <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href='{!! url('/'); !!}'>Reports</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Analytics</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Export</a>
-                </li>
-            </ul>
-        </nav> -->
 
         <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
             <h1>Bike Stations</h1>
 
-            <section class="row text-center placeholders">
-                <div class="col-6 col-sm-3 placeholder">
-                    <img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-                    <h4>Label</h4>
-                    <div class="text-muted">Something else</div>
-                </div>
-                <div class="col-6 col-sm-3 placeholder">
-                    <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-                    <h4>Label</h4>
-                    <span class="text-muted">Something else</span>
-                </div>
-                <div class="col-6 col-sm-3 placeholder">
-                    <img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-                    <h4>Label</h4>
-                    <span class="text-muted">Something else</span>
-                </div>
-                <div class="col-6 col-sm-3 placeholder">
-                    <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-                    <h4>Label</h4>
-                    <span class="text-muted">Something else</span>
-                </div>
-            </section>
-
             <!-- Day selector -->
             <div class="form formSpacing">
                 {!! Form::open(['url' => '/bikes/api', 'method' => 'post']) !!}
-
-                    {!! Form::input('text', 'datepicker', null, ['class'=>'dateTimeText']) !!}
+                    {!! Form::input('text', 'datepicker', null, ['class'=>'datepicker']) !!}
 
                     {!! Form::select('mdate',
-                        [null => '--']+ array(
+                        array(
                             '01' => '1',
                             '02' => '2',
                             '03' => '3',
@@ -92,10 +49,10 @@
                             '29' => '29',
                             '30' => '30',
                             '31' => '31'
-                        ),'--', ['class'=>'dateTimeSelect'])
+                        ), ['class'=>'dateTimeSelect'])
                     !!}
                     {!! Form::select('month',
-                        [null => '--'] + array(
+                        array(
                             '01' => 'Jan',
                             '02' => 'Feb',
                             '03' => 'Mar',
@@ -108,7 +65,7 @@
                             '10' => 'Oct',
                             '11' => 'Nov',
                             '12' => 'Dec'
-                        ),'--', ['class'=>'dateTimeSelect'])
+                        ), ['class'=>'dateTimeSelect'])
                     !!}
                     {!! Form::selectYear('year', 2012, 2017, 2017, ['class'=>'dateTimeSelect']) !!}
 
