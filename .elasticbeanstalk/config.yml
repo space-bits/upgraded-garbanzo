@@ -3,10 +3,10 @@ branch-defaults:
     environment: null
     group_suffix: null
 global:
-  application_name: cloudComputingA2
+  application_name: upggraded-garbanzo
   branch: null
   default_ec2_keyname: aws-eb
-  default_platform: PHP 5.3
+  default_platform: PHP 7.0
   default_region: south-east-2
   include_git_submodules: true
   instance_profile: null
