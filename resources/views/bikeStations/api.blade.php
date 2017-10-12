@@ -54,13 +54,13 @@
             </section>
 
             <!-- Day selector -->
-            <div class="form">
+            <div class="form formSpacing">
                 {!! Form::open(['url' => '/bikes/api', 'method' => 'post']) !!}
 
-                {!! Form::input('text', 'datepicker') !!}
+                    {!! Form::input('text', 'datepicker', null, ['class'=>'dateTimeText']) !!}
 
-                {!! Form::select('mdate',
-                        array(
+                    {!! Form::select('mdate',
+                        [null => '--']+ array(
                             '01' => '1',
                             '02' => '2',
                             '03' => '3',
@@ -92,10 +92,10 @@
                             '29' => '29',
                             '30' => '30',
                             '31' => '31'
-                        ))
+                        ),'--', ['class'=>'dateTimeSelect'])
                     !!}
                     {!! Form::select('month',
-                        array(
+                        [null => '--'] + array(
                             '01' => 'Jan',
                             '02' => 'Feb',
                             '03' => 'Mar',
@@ -108,12 +108,12 @@
                             '10' => 'Oct',
                             '11' => 'Nov',
                             '12' => 'Dec'
-                        ))
+                        ),'--', ['class'=>'dateTimeSelect'])
                     !!}
-                    {!! Form::selectYear('year', 2012, 2017) !!}
+                    {!! Form::selectYear('year', 2012, 2017, 2017, ['class'=>'dateTimeSelect']) !!}
 
 
-                    {!! Form::submit('Choose!') !!}
+                    {!! Form::submit('Choose!',['class'=>'dateTimeSelectButton']) !!}
                 {!! Form::close() !!}
 
             </div>
@@ -132,9 +132,7 @@
                         @foreach($stations as $station)
                         <tr>
                             <td>{{ $station['id'] }}</td>
-                            <td><a href="https://www.google.com/maps/search/
-                                ?api=1&query={{$station['latitude']}},{{$station['longitude']}}">
-                                    {{ $station['featurename'] }}</a></td>
+                            <td><a href="https://www.google.com/maps/search/?api=1&query={{$station['latitude']}},{{$station['longitude']}}">{{ $station['featurename'] }}</a></td>
                             <td>{{ $station['nbbikes'] }}</td>
                             <td>{{ $station['nbemptydoc'] }}</td>
                         </tr>
