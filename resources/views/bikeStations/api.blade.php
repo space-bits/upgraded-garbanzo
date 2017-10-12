@@ -10,11 +10,11 @@
         <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
             <h1>Bike Stations</h1>
             <!-- Day selector -->
-            <div class="form formSpacing">
-                {!! Form::open(['url' => '/bikes/api', 'method' => 'post']) !!}
-                    {!! Form::input('text', 'datepicker', null, ['class'=>'datepicker']) !!}
+            <!-- <div class="form formSpacing">
+                 Form::open(['url' => '/bikes/api', 'method' => 'post']) !!}
+                     Form::input('text', 'datepicker', null, ['class'=>'datepicker']) !!}
 
-                    {!! Form::select('mdate',
+                     Form::select('mdate',
                         array(
                             '01' => '1',
                             '02' => '2',
@@ -49,7 +49,7 @@
                             '31' => '31'
                         ), ['class'=>'dateTimeSelect'])
                     !!}
-                    {!! Form::select('month',
+                     Form::select('month',
                         array(
                             '01' => 'Jan',
                             '02' => 'Feb',
@@ -65,13 +65,13 @@
                             '12' => 'Dec'
                         ), ['class'=>'dateTimeSelect'])
                     !!}
-                    {!! Form::selectYear('year', 2012, 2017, 2017, ['class'=>'dateTimeSelect']) !!}
+                     Form::selectYear('year', 2012, 2017, 2017, ['class'=>'dateTimeSelect']) !!}
 
 
-                    {!! Form::submit('Choose!',['class'=>'dateTimeSelectButton']) !!}
-                {!! Form::close() !!}
+                     Form::submit('Choose!',['class'=>'dateTimeSelectButton']) !!}
+                 Form::close() !!}
 
-            </div>
+            </div> -->
 
             <div class="table-responsive">
                 <table class="table table-striped">
