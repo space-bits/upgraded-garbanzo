@@ -5,11 +5,10 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <div class="container-fluid">
-    <div class="row">
 
+    <div class="row">
         <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
             <h1>Bike Stations</h1>
-
             <!-- Day selector -->
             <div class="form formSpacing">
                 {!! Form::open(['url' => '/bikes/api', 'method' => 'post']) !!}
