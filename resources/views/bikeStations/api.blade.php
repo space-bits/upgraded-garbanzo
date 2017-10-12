@@ -1,8 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <div class="container-fluid">
 
@@ -72,7 +70,8 @@
                  Form::close() !!}
 
             </div> -->
-
+            <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
@@ -99,4 +98,6 @@
     </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 @endsection

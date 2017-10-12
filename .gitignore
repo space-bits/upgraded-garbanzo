@@ -23,7 +23,7 @@
 .byebug_history
 
 # Elastic Beanstalk Files
-myapp.zip
+*.zip
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
