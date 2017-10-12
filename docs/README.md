@@ -10,9 +10,8 @@ There is no database usage as it is unrequired; All the data is pulled live from
 
 
 ### APIs used
-[Pedestrian data (hourly)](https://data.melbourne.vic.gov.au/resource/cb85-mn2u.json}  
-[Helping Out](https://data.melbourne.vic.gov.au/resource/nbdz-yp2p.json}  
-[Affordable Food](https://data.melbourne.vic.gov.au/resource/uwyu-5y9e.json}  
+[Pedestrian data (hourly)](https://data.melbourne.vic.gov.au/resource/cb85-mn2u.json)
+[Helping Out](https://data.melbourne.vic.gov.au/resource/nbdz-yp2p.json)  
 [Bike Share Station Data](https://data.melbourne.vic.gov.au/resource/uwyu-5y9e.json)  
 
 
