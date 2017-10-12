@@ -18,9 +18,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
 
+    <script src="{{URL::asset('js/ie10-viewport-bug-workaround.js')}}"></script>
+    <script src="{{URL::asset('js/datepicker.js')}}"></script>
+    
+    <script src="{{URL::asset('js/piechart.js')}}"></script>
 
     <!-- Custom styles for this template -->
     <link href="{{URL::asset('css/app.css')}}" rel="stylesheet">
