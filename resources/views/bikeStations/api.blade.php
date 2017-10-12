@@ -2,6 +2,29 @@
 
 @section('content')
 
+<script>
+    window.onload = function() {
+
+        var chart = new CanvasJS.Chart("chartContainer", {
+        	animationEnabled: false,
+        	title: {
+        		text: "Bikes Statistics"
+        	},
+        	data: [{
+        		type: "pie",
+        		startAngle: 240,
+        		yValueFormatString: "##0.00\"%\"",
+        		indexLabel: "{label} {y}",
+        		dataPoints: [
+        			{y: <?php echo json_encode(($totals[1] / ( $totals[0] + $totals[1] )) * 100, JSON_HEX_TAG); ?>, label: "Bikes In Use"},
+        			{y: <?php echo json_encode(($totals[0] / ( $totals[0] + $totals[1] )) * 100, JSON_HEX_TAG); ?>, label: "Available Bikes"}
+        		]
+        	}]
+        });
+        chart.render();
+    }
+</script>
+
 <div class="container-fluid">
 
     <div class="row">

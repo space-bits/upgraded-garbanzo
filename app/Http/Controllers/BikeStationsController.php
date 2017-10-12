@@ -152,14 +152,17 @@ class BikeStationsController extends Controller
         //     return view('layouts.errors')
         //         -> with('errormsg', "Error! Invalid date selection.");
         // }
+        $totals = [0,1];
 
         for($i=0; $i < count($response_json); $i++){
 
             // foreach ($response_json[0] as $station) {
             //     if(isset($station) && !empty($station) && $station != null)
             //     {
+                    // Store totals
+                    $totals[0] += $response_json[$i]['nbbikes'];
+                    $totals[1] += $response_json[$i]['nbemptydoc'];
 
-            
                     $bikeStations[$i] = [
                         'id' => $response_json[$i]['id'],
                         'featurename' => $response_json[$i]['featurename'],
@@ -173,36 +176,13 @@ class BikeStationsController extends Controller
             //     }
             // }
         }
-        /*
-        Array
-        (
-            [0] => Array
-            (
-                [coordinates] => Array
-                (
-                    [type] => Point
-                    [coordinates] => Array
-                    (
-                        [0] => 144.967814
-                        [1] => -37.817523
-                    )
-                )
-                [featurename] => Federation Square -
-                                Flinders St / Swanston St - City
-                [id] => 4
-                [nbbikes] => 14
-                [nbemptydoc] => 11
-                [terminalname] => 60001
-                [uploaddate] => 2017-09-29T11:15:06.000
-            )
-            ...
-        )
-        */
+
 
         curl_close($ch);
 
         return view('bikeStations.api')
-                ->with('stations', $bikeStations);
+                ->with('stations', $bikeStations)
+                ->with('totals', $totals);
     }
 
 }
