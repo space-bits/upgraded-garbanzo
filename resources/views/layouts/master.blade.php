@@ -21,9 +21,9 @@
     <script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
 
     <script src="{{URL::asset('js/ie10-viewport-bug-workaround.js')}}"></script>
-    <script src="{{URL::asset('js/datepicker.js')}}"></script>
-    
-    <script src="{{URL::asset('js/piechart.js')}}"></script>
+    <!-- <script src="{{URL::asset('js/datepicker.js')}}"></script> -->
+
+    <!-- <script src="{{URL::asset('js/piechart.js')}}"></script> -->
 
     <!-- Custom styles for this template -->
     <link href="{{URL::asset('css/app.css')}}" rel="stylesheet">
