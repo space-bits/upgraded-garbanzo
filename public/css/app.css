@@ -73,3 +73,26 @@ h1 {
   padding-bottom: 1.5rem;
 }
 
+
+/*
+*
+*   Date/Time selectors
+*
+*/
+.dateTimeText{
+    height: 2rem;
+}
+
+.dateTimeSelect{
+    width: 4rem;
+    height: 2rem;
+}
+
+.dateTimeSelectButton{
+    height: 2rem;
+}
+
+.formSpacing{
+    padding-bottom: 2rem;
+    text-align: center;
+}
