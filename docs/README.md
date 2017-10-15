@@ -11,15 +11,3 @@ There is no database usage as it is unrequired; All the data is pulled live from
 
 ### APIs used
 [Bike Share Station Data](https://data.melbourne.vic.gov.au/resource/uwyu-5y9e.json)  
-[Pedestrian data (hourly)](https://data.melbourne.vic.gov.au/resource/cb85-mn2u.json)  
-[Helping Out](https://data.melbourne.vic.gov.au/resource/nbdz-yp2p.json)  
-
-
-# Still required
-Priority | feature  
-10 | Docs  
-10 | Deploy to cloud  
-7 | graphs?  
-3 | cleanup  
-6 | testing (useful for portfolio stuff)  
-10 | Day select for viewing data  
