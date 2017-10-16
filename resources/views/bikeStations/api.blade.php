@@ -8,7 +8,7 @@
         var chart = new CanvasJS.Chart("chartContainer", {
         	animationEnabled: false,
         	title: {
-        		text: "Bikes Statistics"
+        		text: "Bike Usage Statistics"
         	},
         	data: [{
         		type: "pie",
